@@ -1,7 +1,7 @@
 //SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
 
-// Example deployed to Goerli: 0xDBa03676a2fBb6711CB652beF5B7416A53c1421D
+// Example deployed to Goerli: 0xc5b6265C7B99e2775a6a98dFE4B671C917c31FDB
 
 contract TipMeHoney {
     // Memo struct. Creating datatype used for Events.
@@ -23,7 +23,7 @@ contract TipMeHoney {
     // we can withdraw to this address later.
     address payable owner;
 
-    // List of all memos received from coffee purchases.
+    // List of all memos received from tipers.
     Memo[] memos;
 
     constructor() {
@@ -64,6 +64,4 @@ contract TipMeHoney {
     function withdrawTips() public {
         require(owner.send(address(this).balance));
     }
-
-    function getMemos() public {}
 }
